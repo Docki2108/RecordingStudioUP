@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>News</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div th:insert="fragments/header :: defaultheader"></div>
+
+<div th:each="el : ${zayavka}">
+  <form th:action="'/zayavka/edit/'+ ${el.id}" method="post">
+    <p>Название:</p>
+    <input type="text" th:value="${el.name}" id="name" name="name" placeholder="Название"><br>
+    <p>Текст:</p>
+
+    <input type="submit" value="Изменить заявку" class="btn btn-success">
+  </form>
+</div>
+
+<a href="/zayavka/" class="btn btn-primary">Назад</a>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head >
+    <meta content="text/html" charset="UTF-8">
+    <title>News</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<form method="get" action="/naborApparaturi/search">
+    <input type="text" name="id" id="id">
+    <input type="submit" value="Найти">
+</form>
+
+<div th:each="el : ${naborApparaturi}">
+    <h2 th:text="${microfon.id}"></h2>
+    <h2 th:text="${naushniki.id}"></h2>
+    <h2 th:text="${monitori.id}"></h2>
+    <h2 th:text="${miksherniypult.id}"></h2>
+    <h2 th:text="${po.id}"></h2>
+    <!--  <h3 th:text="${el.author}"></h3>-->
+    <!--  <p th:text="${el.views}"></p>-->
+    <!--  <p th:text="${el.likes}"></p>-->
+
+
+</div>
+
+<div class="container">
+    <a href="/naborApparaturi/add" class="btn">Добавить заявку</a>
+</div>
+
+
+</body>
+</html>

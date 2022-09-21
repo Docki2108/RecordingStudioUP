@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head >
+  <meta content="text/html" charset="UTF-8">
+  <title>News</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div th:insert="fragments/header :: defaultheader"></div>
+<form method="get" action="/zayavka/search">
+  <input type="text" name="name" id="name">
+  <input type="submit" value="Найти">
+</form>
+<div th:each="el : ${zayavka}">
+  <h2 th:text="${el.name}"></h2>
+  <a th:href="'/zayavka/'+${el.id}">Подробнее</a>
+</div>
+<div class="container">
+  <a href="/zayavka/add" class="btn">Добавить заявку</a>
+</div>
+</body>
+</html>

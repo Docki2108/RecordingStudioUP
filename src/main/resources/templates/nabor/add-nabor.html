@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html" charset="UTF-8">
+    <title>News</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<form th:action="${'/microfons/add'}" method="post">
+    <input type="text" name="name" placeholder="Введите имя человека">
+    <select  name="name" th:value="${microfons}">
+        <div th:each="element : ${name}">
+            <option th:text="${element.name}"></option>
+        </div>
+    </select>
+    <br>
+    <button type="submit">Добавить человека</button>
+</form>
+<a href="/zayavka/" class="btn btn-primary">Назад</a>
+
+</body>
+</html>

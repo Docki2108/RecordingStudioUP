@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html" charset="UTF-8">
+    <title>News</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<form th:object="${zayavka}" action="/zayavka/add" method="post">
+    <p>Заголовок
+        <input type="text" id="name" name="name" placeholder="Заголовок">
+    <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+
+    <input type="submit" value="Добавить заявку" class="btn btn-success">
+</form>
+<a href="/zayavka/" class="btn btn-primary">Назад</a>
+
+</body>
+</html>
